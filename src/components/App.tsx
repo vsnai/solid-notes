@@ -7,6 +7,7 @@ export default function App() {
   return (
     <main class="space-y-4 p-10">
       <button
+        data-testid="toggle"
         class="rounded bg-gray-300 px-4 py-3"
         onClick={() => setIsOpen((prev) => !prev)}
       >
@@ -16,6 +17,7 @@ export default function App() {
       <Presence exitBeforeEnter>
         <Show when={isOpen()}>
           <Motion.div
+            data-testid="foo"
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
             animate={{ opacity: [0, 1] }}
