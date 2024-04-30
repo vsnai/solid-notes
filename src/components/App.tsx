@@ -7,7 +7,7 @@ export default function App() {
   return (
     <main class="space-y-4 p-10">
       <button
-        data-testid="toggle"
+        data-testid="toggle-button"
         class="rounded bg-gray-300 px-4 py-3"
         onClick={() => setIsOpen((prev) => !prev)}
       >

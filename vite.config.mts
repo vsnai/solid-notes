@@ -16,9 +16,13 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
-    // isolate: false,
-  },
-  resolve: {
-    conditions: ['development', 'browser'],
+    coverage: {
+      exclude: [
+        'postcss.config.js',
+        'tailwind.config.js',
+        'src/index.tsx',
+        // ...
+      ],
+    },
   },
 })

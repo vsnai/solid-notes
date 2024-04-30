@@ -4,13 +4,12 @@ import App from './App'
 
 describe('<App />', () => {
   test('it will render an text input and a button', () => {
-    const component = render(() => <App />)
-    const button = component.getByTestId('toggle')
+    const { getByTestId } = render(() => <App />)
 
-    expect(button).toBeInTheDocument()
+    expect(getByTestId('toggle-button')).toBeInTheDocument()
 
-    fireEvent.click(button)
+    fireEvent.click(getByTestId('toggle-button'))
 
-    expect(component.getByTestId('foo'))
+    expect(getByTestId('foo'))
   })
 })
