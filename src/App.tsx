@@ -1,7 +1,3 @@
-import type { Component } from 'solid-js'
-
-const App: Component = () => {
-  return <div>Hello</div>
+export default function App() {
+  return <div class="font-medium">Hello</div>
 }
-
-export default App
