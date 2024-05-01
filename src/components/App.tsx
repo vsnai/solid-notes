@@ -31,7 +31,7 @@ export default function App() {
 
   onCleanup(() => observer?.disconnect())
 
-  async function fetcher(offset: string): Promise<Response> {
+  async function fetcher(offset: string): Promise<Response | undefined> {
     const url =
       offset === ''
         ? `http://localhost:3005/notes?limit=40`
@@ -69,9 +69,9 @@ export default function App() {
         <Show when={open()}>
           <Motion.div
             data-testid="foo"
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            animate={{ opacity: [0, 1] }}
+            initial={{ opacity: 0, height: '40px' }}
+            exit={{ opacity: 0, height: 0 }}
+            animate={{ opacity: [0, 1], height: [0, '40px'] }}
             transition={{ duration: 0.15, easing: 'ease-in-out' }}
           >
             <Combobox
